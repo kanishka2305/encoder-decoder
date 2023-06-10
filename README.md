@@ -44,15 +44,45 @@ A0 = Y7 + Y5 + Y3 + Y1 <br>
 
 
 ## Program:
+```py
+Decoder
+
+module exp8a(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0=((~a)&(~b)&(~c));
+assign d1=((~a)&(~b)&c);
+assign d2=((~a)&b&(~c));
+assign d3=((~a)&b&c);
+assign d4=(a&(~b)&(~c));
+assign d5=(a&(~b)&c);
+assign d6=(a&b&(~c));
+assign d7=(a&b&c);
+endmodule
+
+Encoder
+
+module exp8b(y7,y6,y5,y4,y3,y2,y1,a2,a1,a0);
+input y7,y6,y5,y4,y3,y2,y1;
+output a2,a1,a0;
+assign a2=(y7+y6+y5+y4);
+assign a1=(y7+y6+y3+y2);
+assign a0=(y7+y5+y3+y1);
+endmodule
+```
 
 
 ## RTL Schematic:
+![image](https://github.com/kanishka2305/encoder-decoder/assets/113497357/c41360cb-6b20-4088-ac30-9de9706cf4ab)
+![image](https://github.com/kanishka2305/encoder-decoder/assets/113497357/0b749667-8c83-442d-b815-066514046d96)
 
 
 
 
 ## Timing Diagram:
 
+![image](https://github.com/kanishka2305/encoder-decoder/assets/113497357/2b2ea037-7701-43d5-b10f-b05f9deafc3c)
+![image](https://github.com/kanishka2305/encoder-decoder/assets/113497357/6c7c1a2a-063b-48df-9b57-b9f7e615d4b9)
 
 
 ## Result:
